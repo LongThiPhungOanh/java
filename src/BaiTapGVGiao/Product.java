@@ -1,15 +1,13 @@
 package BaiTapGVGiao;
 
 public class Product {
-    Object[] arr = new Object[5];
-    protected int id = 0;
-    protected String name;
-    protected double price;
-    protected double quantity;
-    protected String description;
-    protected final String ID = "MaId 00";
+    public int id;
+    public String name;
+    public double price;
+    public double quantity;
+    public String description;
     public int getId() {
-        return id++;
+        return id;
     }
     public void setId(int id) {
         this.id = id;
@@ -38,17 +36,23 @@ public class Product {
     public void setDescription(String description) {
         this.description = description;
     }
-    public String MaId() {
-        getId();
-        String total = ID + id;
-        return total ;
-    }
-    public Product() {}
+    public Product(){}
     public Product(int id, String name, double price, double quantity, String description) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.quantity = quantity;
         this.description = description;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Product " +
+                "id " + id +
+                ", name '" + name + '\'' +
+                ", price " + price +
+                ", quantity " + quantity +
+                ", description '" + description + '\'';
     }
 }
